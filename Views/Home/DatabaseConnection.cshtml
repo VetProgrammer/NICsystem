@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Database Connection Test";
+}
+
+<h1>Database Connection Test</h1>
+
+@if (ViewBag.Success == true)
+{
+    <div class="alert alert-success" role="status">
+        <strong>Connection successful.</strong>
+        <p>Database: @ViewBag.DatabaseName</p>
+        <p>SQL Server version: @ViewBag.ServerVersion</p>
+    </div>
+}
+else
+{
+    <div class="alert alert-danger" role="alert">
+        <strong>Connection failed.</strong>
+        <p>@ViewBag.Message</p>
+    </div>
+}
+
+<p><a asp-controller="Home" asp-action="Index">Return to welcome page</a></p>
